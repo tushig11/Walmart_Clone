@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:contentDescription="@string/logoDescription"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/loginMessage"
+        android:textColor="#121212"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:background="@drawable/custom_border"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/emailText"
+            style="@style/formStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/emailInput" />
+
+        <EditText
+            android:id="@+id/editTextTextEmailAddress"
+            style="@style/insideBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="no"
+            android:ems="10"
+            android:hint="@string/noHint"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:id="@+id/passwordText"
+            style="@style/formStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/passwordInput" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            style="@style/insideBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="no"
+            android:ems="10"
+            android:hint="@string/noHint"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/forgetText"
+            android:onClick="forgetPassword"
+            style="@style/insideBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:autoLink="all"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/forgetText" />
+
+        <Button
+            android:id="@+id/signBtn"
+            android:onClick="signIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/signBtn"
+            android:layout_marginTop="20dp"
+            android:background="#094DB3"
+            android:textColor="#FFFFFF"
+            style="@style/insideBox"/>
+
+        <TextView
+            android:id="@+id/signUpText"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/signUpText"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            style="@style/insideBox"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/signUpBtn"
+            android:onClick="signUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/signUp"
+            android:layout_marginTop="10dp"
+            android:background="#FFFFFF"
+            android:textColor="#094DB3"
+            style="@style/insideBox"/>
+    </LinearLayout>
+
+</LinearLayout>
