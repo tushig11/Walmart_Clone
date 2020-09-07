@@ -1,5 +1,6 @@
 package com.example.walmart_clone
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         else{
             val currentUser = User(email,password)
             if(userList.contains(currentUser)){
-                var shoppingIntent = Intent(this, ShoppingActivity::class.java)
+                val shoppingIntent = Intent(this, ShoppingActivity::class.java)
                 shoppingIntent.putExtra("currentUser", currentUser)
                 startActivity(shoppingIntent)
             } else Toast.makeText(this, "Check your credential", Toast.LENGTH_LONG).show()
@@ -50,8 +51,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun signUp(view: View){
-        var registerIntent = Intent(this, RegisterActivity::class.java)
-        startActivity(registerIntent)
+        val registerIntent = Intent(this, RegisterActivity::class.java)
+        startActivityForResult(registerIntent, 200)
     }
 
     fun checkUser(user:User): List<User>{
@@ -69,6 +70,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent.createChooser(mailIntent, "Choose email client ..."))
         }catch(e:Exception){
             Toast.makeText(this,e.message, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == 200){
+            if(resultCode == Activity.RESULT_OK){
+                val newUser = data?.getSerializableExtra("newUser") as User
+                userList.add(newUser)
+                Toast.makeText(this,"Account created successfully", Toast.LENGTH_LONG).show()
+            }
         }
     }
 }
