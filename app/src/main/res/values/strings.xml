@@ -1,14 +1,29 @@
 <resources>
+    <!-- Main Activity -->
     <string name="app_name">Walmart_Clone</string>
     <string name="logoDescription">Company Logo</string>
     <string name="loginMessage">Sign in to your account</string>
     <string name="emailInput">Email address (required)</string>
     <string name="passwordInput">Password (required)</string>
     <string name="forgetText">Forget your password?</string>
+
     <string name="hintEmail">Enter your email address here ...</string>
     <string name="hintPass">Enter your password here ...</string>
     <string name="noHint">""</string>
     <string name="signBtn">Sign in</string>
     <string name="signUpText">"-------  Don't have an account ?  -------"</string>
     <string name="signUp">Create a new account</string>
+
+    <!-- Shopping Activity -->
+    <string name="shop_email">"Hello Guest"</string>
+    <string name="shop_categoryText">Shop by Category</string>
+    <string name="shop_categoryDescription">Category Image</string>
+    <string name="shop_categoryName">Category</string>
+
+    <!-- Register Activity -->
+    <string name="registerMessage">Create your account</string>
+    <string name="logInText">---- Already have an account? ----</string>
+    <string name="createBtn">Create account</string>
+    <string name="firstNameInput">First name (required)</string>
+    <string name="lastNameInput">Last name (required)</string>
 </resources>

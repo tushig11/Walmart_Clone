@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clickable="true"
-    android:focusable="true"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".RegisterActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -24,7 +22,7 @@
         android:layout_height="68dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="@string/loginMessage"
+        android:text="@string/registerMessage"
         android:textColor="#121212"
         android:textSize="25sp" />
 
@@ -35,17 +33,50 @@
         android:background="@drawable/custom_border"
         android:orientation="vertical">
 
-
         <TextView
-            android:id="@+id/emailText"
+            android:id="@+id/register_firstNameText"
             style="@style/formStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:text="@string/firstNameInput" />
+
+        <EditText
+            android:id="@+id/register_firstNameInput"
+            style="@style/insideBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="no"
+            android:ems="10"
+            android:hint="@string/noHint"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/register_lastNameText"
+            style="@style/formStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lastNameInput" />
+
+        <EditText
+            android:id="@+id/register_lastNameInput"
+            style="@style/insideBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="no"
+            android:ems="10"
+            android:hint="@string/noHint"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/register_emailText"
+            style="@style/formStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/emailInput" />
 
         <EditText
-            android:id="@+id/emailInput"
+            android:id="@+id/register_emailInput"
             style="@style/insideBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,14 +86,14 @@
             android:inputType="textEmailAddress" />
 
         <TextView
-            android:id="@+id/passwordText"
+            android:id="@+id/register_passwordText"
             style="@style/formStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/passwordInput" />
 
         <EditText
-            android:id="@+id/passwordInput"
+            android:id="@+id/register_passwordInput"
             style="@style/insideBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,50 +102,26 @@
             android:hint="@string/noHint"
             android:inputType="textPassword" />
 
-        <TextView
-            android:id="@+id/forgetText"
-            android:onClick="forgetPassword"
-            style="@style/insideBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:autoLink="all"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="@string/forgetText" />
-
         <Button
-            android:id="@+id/signBtn"
-            android:onClick="signIn"
+            android:id="@+id/createBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/signBtn"
-            android:layout_marginTop="20dp"
+            android:text="@string/createBtn"
+            android:layout_marginTop="5dp"
             android:background="#094DB3"
             android:textColor="#FFFFFF"
             style="@style/insideBox"/>
 
-        <TextView
-            android:id="@+id/signUpText"
-            android:layout_marginTop="50dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/signUpText"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            style="@style/insideBox"
-            android:gravity="center"/>
-
         <Button
-            android:id="@+id/signUpBtn"
-            android:onClick="signUp"
+            android:id="@+id/logInBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/signUp"
+            android:text="@string/loginMessage"
             android:layout_marginTop="10dp"
             android:background="#FFFFFF"
             android:textColor="#094DB3"
             style="@style/insideBox"/>
+
     </LinearLayout>
 
 </LinearLayout>
