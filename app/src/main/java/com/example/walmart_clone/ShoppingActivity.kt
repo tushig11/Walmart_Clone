@@ -5,7 +5,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_shopping.*
 
 class ShoppingActivity : AppCompatActivity() {
-    lateinit var user: User
+    private lateinit var user: User
     var categoryList = ArrayList<Category>()
 
     private fun createStaticCategories(){
@@ -22,6 +22,6 @@ class ShoppingActivity : AppCompatActivity() {
         user = intent.getSerializableExtra("currentUser") as User
         displayUserEmail.text = "Hello ${user.email}"
         createStaticCategories()
-        categoryGrid.adapter = CategoryAdapter(this, categoryList)
+        categoryGrid.adapter = CategoryAdapter(this, categoryList, user)
     }
 }

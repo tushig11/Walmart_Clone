@@ -1,19 +1,23 @@
 package com.example.walmart_clone
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import kotlinx.android.synthetic.main.category_item.view.*
 
 class CategoryAdapter: BaseAdapter{
     var categoryList = ArrayList<Category>()
     var context: Context? = null
-    constructor(context: Context, list: ArrayList<Category>):super(){
+    var user: User? = null
+    constructor(context: Context, list: ArrayList<Category>, user: User):super(){
         this.context = context
         this.categoryList = list
+        this.user = user
     }
 
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
@@ -23,6 +27,10 @@ class CategoryAdapter: BaseAdapter{
         categoryView.categoryImage.setImageResource(category.image!!)
         categoryView.categoryImage.setOnClickListener{
             Toast.makeText(context,"“You have chosen the ${category.name} category of shopping”.", Toast.LENGTH_LONG).show()
+            val shoppingIntent = Intent(context, CategoryList::class.java)
+            shoppingIntent.putExtra("currentUser", user)
+            shoppingIntent.putExtra("currentCategory", category)
+            context!!.startActivity(shoppingIntent)
         }
         categoryView.categoryName.text = category.name!!
         return categoryView
